@@ -1,0 +1,11 @@
+#in_navbar, #hm_navbar{
+	background-color: #bbe1fa;
+	color: #1b262c;
+	padding-left: 0px;
+	padding-right:0px;
+}
+
+#in_titlebar, #hm_c_display_bar{
+	background-color: #3282b8;
+	color: white;
+}
