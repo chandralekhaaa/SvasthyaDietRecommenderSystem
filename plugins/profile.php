@@ -16,12 +16,12 @@
 					<h1 class="display-4">Profile</h1>
 				</div>
 				<div class="row" id="form_content">
-					<form>
+					<form action="calorie_calculator.php" method=POST>
 					Gender<br> 
 					<select name="p_gender" >
 						<option></option>
-						<option>Male</option>
-						<option>Female</option>
+						<option value="male">Male</option>
+						<option value="female">Female</option>
 					</select><br><br>
 
 					<label for="p_age">Age</label><br>
@@ -44,11 +44,11 @@
 					Sedentary level  <br>
 					<select name="p_sl">
 						<option></option>
-						<option> Sedentary</option>
-						<option> Lightly Active</option>
-						<option> Moderately Active</option>
-						<option> Very Active</option>
-						<option> Extremely Active</option>
+						<option value="sed"> Sedentary</option>
+						<option value="light"> Lightly Active</option>
+						<option value="moderate"> Moderately Active</option>
+						<option value="active"> Very Active</option>
+						<option value="extreme"> Extremely Active</option>
 					</select><br><br>
 
 					Number of meals  <br>
@@ -67,7 +67,7 @@
 						<option> Non-Vegetarian</option>
 					</select><br><br>
 
-					<input type="submit" name="p_btn" value="Submit" class="btn btn-lg"><br><br><br>
+					<input type="submit" name="calculate_cal" value="Submit" class="btn btn-lg"><br><br><br>
 
 					</form>
 				</div>
