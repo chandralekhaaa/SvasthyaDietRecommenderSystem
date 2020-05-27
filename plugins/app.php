@@ -1,5 +1,5 @@
 <?php
-include("app.php");
+include("../includes/dbconfig.php");
 if(isset($_POST['signup']))
 {
 	$r_emailid=$_POST['r_emailid'];
