@@ -47,6 +47,9 @@ if (isset($_POST['calculate_cal']))
         }$weight_const = 1.0*$user_weight*24;
 
     }
+
+    //echo $cal_intake;
+
 }
 
 
