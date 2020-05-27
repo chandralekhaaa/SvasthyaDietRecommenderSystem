@@ -14,13 +14,13 @@
 			<div class="col-12">
 			<ul class="nav justify-content-end" >
 			  <li class="nav-item">
-			    <a class="nav-link active" href="tips.html">Food Facts</a>
+			    <a class="nav-link active" href="tips.php">Food Facts</a>
 			  </li>
 			  <li class="nav-item">
-			    <a class="nav-link" href="login.html">Sign In</a>
+			    <a class="nav-link" href="login.php">Sign In</a>
 			  </li>
 			  <li class="nav-item">
-			    <a class="nav-link" href=register.html>Sign Up</a>
+			    <a class="nav-link" href="register.php">Sign Up</a>
 			  </li>			  
 			</ul>
 			</div>

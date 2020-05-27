@@ -17,7 +17,8 @@
 					<h1 class="display-4">Sign Up</h1>
 				</div>
 				<div class="row" id="form_content">
-					<form name="r_form">
+
+					<form name="r_form" action="app.php" method="post">
 						<label for="r_username">Username</label><br>
 						<input type="text" id="r_username" name="r_username"/><br><br>
 
@@ -33,7 +34,7 @@
 						<input type="submit" class="btn btn-lg" value="Sign Up" id="signup" name="signup"/><br><br>
 
 						<p>Already a member?
-						<a href="login.html">Sign In</a></p>
+						<a href="login.php">Sign In</a></p>
 					</form>
 				</div>
 			</div>
@@ -44,5 +45,6 @@
 	<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+
 </body>
 </html>

@@ -16,6 +16,7 @@
 					<h1 class="display-4">Sign In</h1>
 				</div>
 				<div class="row" id="form_content">
+					<form action="app.php" method="post">
 					<form>
 						<label for="l_emailid">Email address</label><br>
 						<input type="email" id="l_emailid" name="l_emailid"/><br><br>
@@ -26,7 +27,7 @@
 						<input type="submit" class="btn btn-lg" value="Sign In" id="signin" name="signin"/><br><br>
 
 						<p>Not a member?
-						<a href="register.html">Sign Up</a></p>
+						<a href="register.php">Sign Up</a></p>
 					</form>
 				</div>
 			</div>
