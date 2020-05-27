@@ -1,3 +1,14 @@
+<?php
+	$user_gender;
+	$user_age = 0;
+	$user_height = 0;
+	$user_weight = 0;
+	$user_bodyfat;
+	$user_sed_level;
+	$user_meal_num=0;
+	$user_diet_type;
+	
+?>
 <!DOCTYPE html>
 <html>
 <head>

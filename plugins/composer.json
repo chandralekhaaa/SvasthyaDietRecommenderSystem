@@ -1,0 +1,14 @@
+{
+    "name": "saket/plugins",
+    "description": "Svasthya Diet Recommendation System",
+    "type": "project",
+    "license": "GNU3",
+    "authors": [
+        {
+            "name": "SakethaYellanki",
+            "email": "sakethayellanki05@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {}
+}
