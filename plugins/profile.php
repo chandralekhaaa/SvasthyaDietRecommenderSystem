@@ -16,7 +16,8 @@
 					<h1 class="display-4">Profile</h1>
 				</div>
 				<div class="row" id="form_content">
-					<form action="calorie_calculator.php" method=POST>
+					<form action="profile_backend.php" method=POST>
+
 					Gender<br> 
 					<select name="p_gender" >
 						<option></option>
@@ -70,6 +71,7 @@
 					<input type="submit" name="calculate_cal" value="Submit" class="btn btn-lg"><br><br><br>
 
 					</form>
+				
 				</div>
 			</div>
 			<div class="col"></div>

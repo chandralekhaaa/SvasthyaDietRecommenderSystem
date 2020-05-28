@@ -19,10 +19,10 @@
 					<form action="app.php" method="post">
 					<form>
 						<label for="l_emailid">Email address</label><br>
-						<input type="email" id="l_emailid" name="l_emailid"/><br><br>
+						<input type="email" id="l_emailid" name="l_emailid" required/><br><br>
 
 						<label for="l_password">Password</label><br>
-						<input type="password" id="l_password" name="l_password"/><br><br><br>
+						<input type="password" id="l_password" name="l_password" required/><br><br><br>
 
 						<input type="submit" class="btn btn-lg" value="Sign In" id="signin" name="signin"/><br><br>
 

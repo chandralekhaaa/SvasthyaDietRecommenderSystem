@@ -1,3 +1,4 @@
+
 <html>
 <head>
 	<meta charset="utf-8">
@@ -8,17 +9,21 @@
 
 </head>
 <body>
+
 	<div class="container-fluid">
 		<div class="row" id="hm_navbar">
 			<div class="col-12">
 			<ul class="nav justify-content-end" >
 			  <li class="nav-item">
-			    <a class="nav-link active" href="index.html">Logout</a>
+			    <a class="nav-link active" href="logout.php">Logout</a>
+			  </li>	
+			  <li class="nav-item">
+			    <a class="nav-link active" href="Profile.php">Profile</a>
 			  </li>			  
 			</ul>
 			</div>
 		</div>
-		<div class="row" >
+			<div class="row" >
 			<div class="col-12 jumbotron jumbotron-fluid" id="hm_c_display_bar">
 			  <div class="container">
 			    <h5 class="display-4">Your ideal calorie intake per day is</h5>
@@ -27,7 +32,7 @@
 			</div>
 		</div>
 		<div class="row" >
-			<!- Display content here->
+			
 		</div>
 
 			

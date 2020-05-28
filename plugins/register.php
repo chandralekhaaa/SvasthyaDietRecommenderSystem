@@ -20,16 +20,16 @@
 
 					<form name="r_form" action="app.php" method="post">
 						<label for="r_username">Username</label><br>
-						<input type="text" id="r_username" name="r_username"/><br><br>
+						<input type="text" id="r_username" name="r_username" placeholder="Only letters" required/><br><br>
 
 						<label for="r_emailid">Email address</label><br>
-						<input type="email" id="r_emailid" name="r_emailid"/><br><br>
+						<input type="email" id="r_emailid" name="r_emailid" placeholder="Enter mailId" required/><br><br>
 
 						<label for="r_password">Password</label><br>
-						<input type="password" id="r_password" name="r_password"/><br><br>
+						<input type="password" id="r_password" name="r_password" palceholder=">=6 and <=10 chars"required/><br><br>
 
 						<label for="r_cpassword">Confirm Password</label><br>
-						<input type="password" id="r_cpassword" name="r_cpassword"/><br><br><br>
+						<input type="password" id="r_cpassword" name="r_cpassword" required/><br><br><br>
 
 						<input type="submit" class="btn btn-lg" value="Sign Up" id="signup" name="signup"/><br><br>
 
