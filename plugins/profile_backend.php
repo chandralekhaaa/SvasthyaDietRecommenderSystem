@@ -57,6 +57,7 @@ if(isset($_POST['calculate_cal']))
         }$weight_const = 1.0*$weight*24;
 
     }
+    $_SESSION['cal_intake']=$cal_intake;
 	$data=[
              'p_gender'=>$gender,
              'p_age'=>$age,
