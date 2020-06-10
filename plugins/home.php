@@ -18,7 +18,7 @@
 			    <a class="nav-link active" href="logout.php">Logout</a>
 			  </li>	
 			  <li class="nav-item">
-			    <a class="nav-link active" href="Profile.php">Profile</a>
+			    <a class="nav-link active" href="db_display.php">Profile</a>
 			  </li>			  
 			</ul>
 			</div>

@@ -11,11 +11,21 @@ if(isset($_POST['calculate_cal']))
 	$sedlevel=$_POST['p_sl'];
 	$nom=$_POST['p_nm'];
 	$diet=$_POST['p_dt'];
+
     $email=$_SESSION["r_emailid"];
     $pass=$_SESSION["r_password"];
 
     $r_username=$_SESSION["r_username"];
-
+    
+    $_SESSION["p_gender"]=$gender;
+    $_SESSION["p_age"]=$age;
+    $_SESSION["p_height"]=$height;
+    $_SESSION["p_weight"]=$weight;
+    $_SESSION["p_bfl"]=$fat;
+    $_SESSION["p_sl"]=$sedlevel;
+    $_SESSION["p_nm"]=$nom;
+    $_SESSION["p_dt"]=$diet;
+    
 	$auth=$firebase->getAuth();
 	$user=$auth->getUserByEmail($email);
 	// $userInfo=$auth->getUserInfo($user->getUid());
