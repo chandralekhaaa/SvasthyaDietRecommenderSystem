@@ -11,13 +11,14 @@ if(isset($_POST['calculate_cal']))
 	$sedlevel=$_POST['p_sl'];
 	$nom=$_POST['p_nm'];
 	$diet=$_POST['p_dt'];
-    $email=$_SESSION["r_username"];
-    $pass=$_SESSION["r_pass"];
+    $email=$_SESSION["r_emailid"];
+    $pass=$_SESSION["r_password"];
 
 	$auth=$firebase->getAuth();
-	$user=$auth->getUserByEmailAndPassword($email,$pass);
-	$userInfo=$auth->getUserInfo($user->getUid());
-	$uid=$user->getUid();
+	$user=$auth->getUserByEmail($email);
+	// $userInfo=$auth->getUserInfo($user->getUid());
+    // $uid=$user->getUid();
+    
 	if($gender=="female"){
         $bmr = (10 * $age) + (6.25 * $height) - (5 * $age) - 161;
         $cal_intake = 0;
@@ -64,9 +65,12 @@ if(isset($_POST['calculate_cal']))
              'p_nm'=>$nom,
              'p_dt'=>$diet,
              'cal_intake'=>$cal_intake
-	      ];
+          ];
+    
+    $parts = explode('@',$email);
+    $username_id = $parts[0];
 	$ref= "profiledb/";
-	$postdata=$database->getReference($ref)->set($data);
+	$postdata=$database->getReference($ref)->getChild($username_id)->set($data);
 
 	if($postdata)
 		{
