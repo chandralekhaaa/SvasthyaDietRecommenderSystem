@@ -1,5 +1,6 @@
 <?php 
 include("../includes/dbconfig.php");
+session_start();
 if(isset($_POST['calculate_cal']))
 {
 	$gender=$_POST['p_gender'];
@@ -10,6 +11,49 @@ if(isset($_POST['calculate_cal']))
 	$sedlevel=$_POST['p_sl'];
 	$nom=$_POST['p_nm'];
 	$diet=$_POST['p_dt'];
+    $email=$_SESSION["r_username"];
+    $pass=$_SESSION["r_pass"];
+
+	$auth=$firebase->getAuth();
+	$user=$auth->getUserByEmailAndPassword($email,$pass);
+	$userInfo=$auth->getUserInfo($user->getUid());
+	$uid=$user->getUid();
+	if($gender=="female"){
+        $bmr = (10 * $age) + (6.25 * $height) - (5 * $age) - 161;
+        $cal_intake = 0;
+        if($sedlevel=="sed"){
+            $cal_intake = $bmr * 1.2;
+        }elseif ($sedlevel=="light"){
+            $cal_intake = $bmr * 1.375;
+        }elseif($sedlevel=="moderate"){
+            $cal_intake = $bmr * 1.55;
+        }elseif($sedlevel=="active"){
+            $cal_intake = $bmr * 1.725;
+        }elseif($sedlevel=="extreme"){
+            $cal_intake = $bmr * 1.9;
+        }else{
+            // error
+        }
+        
+
+    }else{
+        $bmr = (10 * $age) + (6.25 * $height) - (5 * $age) + 5;
+        $cal_intake = 0;
+        if($sedlevel=="sed"){
+            $cal_intake = $bmr * 1.2;
+        }elseif ($sedlevel=="light"){
+            $cal_intake = $bmr * 1.375;
+        }elseif($sedlevel=="moderate"){
+            $cal_intake = $bmr * 1.55;
+        }elseif($sedlevel=="active"){
+            $cal_intake = $bmr * 1.725;
+        }elseif($sedlevel=="extreme"){
+            $cal_intake = $bmr * 1.9;
+        }else{
+            // error
+        }$weight_const = 1.0*$weight*24;
+
+    }
 	$data=[
              'p_gender'=>$gender,
              'p_age'=>$age,
@@ -18,15 +62,16 @@ if(isset($_POST['calculate_cal']))
              'p_bfl'=>$fat,
              'p_sl'=>$sedlevel,
              'p_nm'=>$nom,
-             'p_dt'=>$diet
+             'p_dt'=>$diet,
+             'cal_intake'=>$cal_intake
 	      ];
 	$ref= "profiledb/";
-	$postdata=$database->getReference($ref)->push($data);
+	$postdata=$database->getReference($ref)->set($data);
 
 	if($postdata)
 		{
 			$_SESSION['status']="Data inserted successfully";
-	        header("Location:calorie_calculator.php");
+	        header("Location:home.php");
 	    }
 	else
 	{

@@ -14,6 +14,9 @@ if(isset($_POST['signup']))
 		    {
 		    	$auth=$firebase->getAuth();
 			 	$user=$auth->createUserWithEmailAndPassword($email,$pass);
+                session_start();
+                $_SESSION['r_emailid']=$email;
+                $_SESSION['r_password']=$pass;
 			    header("Location:profile.php");
 		    }
 	        else
@@ -39,6 +42,8 @@ else
 		{
 			session_start();
 		    $_SESSION['username'] = $user->id;
+		    session_register("r_username");
+		    echo "Welcome! $r_username";
 		    header("Location:home.php");
 		}
 }
