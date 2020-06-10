@@ -42,8 +42,20 @@ else
 		if($user)
 		{
 			session_start();
-		    $_SESSION['username'] = $user->id;
-		    $_SESSION['email_l']= $email;
+			$_SESSION['username'] = $user->id;
+			$_SESSION['email_l']= $email;
+
+			$parts = explode('@',$email);
+   			$username_id = $parts[0];
+			
+			$dbref = "profiledb/";
+			$user_data_ref = $database->getReference($dbref)->getChild($username_id)->getValue();
+			$user_display_name = $user_data_ref['r_username'];
+			$calorie_intake = $user_data_ref['cal_intake'];
+
+			$_SESSION['r_username']=$user_display_name;
+			$_SESSION['cal_intake']=$calorie_intake;
+		    
 		    header("Location:home.php");
 		}
 }

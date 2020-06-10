@@ -17,6 +17,7 @@ session_start();
 		<div class="row" id="hm_navbar">
 			<h5>
 			<p>
+			Hello,
 			<?php
 			    echo $_SESSION['r_username'];
 			?>	
