@@ -43,8 +43,6 @@ else
 		{
 			session_start();
 		    $_SESSION['username'] = $user->id;
-		    session_register("r_username");
-		    echo "Welcome! $r_username";
 		    header("Location:home.php");
 		}
 }
