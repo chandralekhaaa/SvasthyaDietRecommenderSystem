@@ -25,9 +25,8 @@
 						<input type="password" id="l_password" name="l_password" required/><br><br><br>
 
 						<input type="submit" class="btn btn-lg" value="Sign In" id="signin" name="signin"/><br><br>
-						$_SESSION['email']=$email;
-						$_SESSION['pass']=$password;
 
+						
 						<p>Not a member?
 						<a href="register.php">Sign Up</a></p>
 					</form>
