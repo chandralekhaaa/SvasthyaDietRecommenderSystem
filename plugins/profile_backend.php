@@ -25,6 +25,8 @@ if(isset($_POST['calculate_cal']))
     $_SESSION["p_sl"]=$sedlevel;
     $_SESSION["p_nm"]=$nom;
     $_SESSION["p_dt"]=$diet;
+
+    $selected_items=$_SESSION['selected_items'];
     
 	$auth=$firebase->getAuth();
 	$user=$auth->getUserByEmail($email);
@@ -78,7 +80,8 @@ if(isset($_POST['calculate_cal']))
              'p_nm'=>$nom,
              'p_dt'=>$diet,
              'cal_intake'=>$cal_intake,
-             'r_username'=>$r_username
+             'r_username'=>$r_username,
+             'selected_items'=>$selected_items
           ];
     
     $parts = explode('@',$email);

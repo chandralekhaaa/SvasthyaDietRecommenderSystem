@@ -57,7 +57,7 @@
 						<option></option>
 						<option> 3</option>
 						<option> 4</option>
-						<option> 5</option>
+						
 					</select><br><br>
 
 					Diet type  <br>
@@ -65,7 +65,6 @@
 						<option></option>
 						<option> Vegan</option>
 						<option> Vegetarian</option>
-						<option> Non-Vegetarian</option>
 					</select><br><br>
 
 					<input type="submit" name="calculate_cal" value="Submit" class="btn btn-lg"><br><br><br>
