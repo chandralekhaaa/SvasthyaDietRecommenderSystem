@@ -1,4 +1,8 @@
-
+<?php
+// Start the session
+session_start();
+include("../plugins/initial_choice.php");
+?>
 <html>
 <head>
 	<meta charset="utf-8">
@@ -12,6 +16,14 @@
 
 	<div class="container-fluid">
 		<div class="row" id="hm_navbar">
+			<h5>
+			<p>
+			Hello,
+			<?php
+			    echo $_SESSION['r_username'];
+			?>	
+
+			</p></h5>
 			<div class="col-12">
 			<ul class="nav justify-content-end" >
 			  <li class="nav-item">
@@ -26,7 +38,7 @@
 			<div class="row" >
 			<div class="col-12 jumbotron jumbotron-fluid" id="hm_c_display_bar">
 			  <div class="container">
-			    <h5 class="display-4">Your ideal calorie intake per day is <p> <?php session_start();echo $_SESSION['cal_intake']?></p></h5>
+			    <h5 class="display-4">Your ideal calorie intake per day is <p> <?php echo $_SESSION['cal_intake']?></p></h5>
 			    <p id="hm_c_intake _display"></p>
 			  </div>
 			</div>
