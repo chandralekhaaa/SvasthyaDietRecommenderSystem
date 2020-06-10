@@ -43,6 +43,7 @@ else
 		{
 			session_start();
 		    $_SESSION['username'] = $user->id;
+		    $_SESSION['email_l']= $email;
 		    header("Location:home.php");
 		}
 }
