@@ -14,6 +14,8 @@ if(isset($_POST['calculate_cal']))
     $email=$_SESSION["r_emailid"];
     $pass=$_SESSION["r_password"];
 
+    $r_username=$_SESSION["r_username"];
+
 	$auth=$firebase->getAuth();
 	$user=$auth->getUserByEmail($email);
 	// $userInfo=$auth->getUserInfo($user->getUid());
@@ -64,7 +66,8 @@ if(isset($_POST['calculate_cal']))
              'p_sl'=>$sedlevel,
              'p_nm'=>$nom,
              'p_dt'=>$diet,
-             'cal_intake'=>$cal_intake
+             'cal_intake'=>$cal_intake,
+             'r_username'=>$r_username
           ];
     
     $parts = explode('@',$email);
