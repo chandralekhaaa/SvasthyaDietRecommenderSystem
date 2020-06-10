@@ -17,6 +17,7 @@ if(isset($_POST['signup']))
                 session_start();
                 $_SESSION['r_emailid']=$email;
                 $_SESSION['r_password']=$pass;
+                $_SESSION['r_username']=$r_username;
 			    header("Location:profile.php");
 		    }
 	        else
