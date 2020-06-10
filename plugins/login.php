@@ -26,6 +26,7 @@
 
 						<input type="submit" class="btn btn-lg" value="Sign In" id="signin" name="signin"/><br><br>
 
+						
 						<p>Not a member?
 						<a href="register.php">Sign Up</a></p>
 					</form>
