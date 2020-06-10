@@ -69,6 +69,7 @@ if(isset($_POST['calculate_cal']))
     
     $parts = explode('@',$email);
     $username_id = $parts[0];
+    $_SESSION['username_id'] = $username_id;
 	$ref= "profiledb/";
 	$postdata=$database->getReference($ref)->getChild($username_id)->set($data);
 
