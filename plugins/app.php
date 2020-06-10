@@ -53,6 +53,7 @@ else
 			$user_display_name = $user_data_ref['r_username'];
 			$calorie_intake = $user_data_ref['cal_intake'];
 
+			$_SESSION['username_id'] = $username_id;
 			$_SESSION['r_username']=$user_display_name;
 			$_SESSION['cal_intake']=$calorie_intake;
 		    

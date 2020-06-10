@@ -1,6 +1,7 @@
 <?php
 // Start the session
 session_start();
+include("../plugins/initial_choice.php");
 ?>
 <html>
 <head>

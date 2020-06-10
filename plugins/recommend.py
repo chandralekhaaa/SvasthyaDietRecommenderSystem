@@ -1,3 +1,2 @@
 import sys
-calorie = sys.argv[1]
-print (calorie)
+total_calorie = sys.argv[1]
