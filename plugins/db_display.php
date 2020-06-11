@@ -19,7 +19,7 @@
 					<h1 class="display-4">Profile</h1>
 				</div>
 				<div class="row" id="form_content">
-					<form action="profile_backend.php" method=POST>
+					<form action="db_display.php" method=POST>
                     <ul>
 						<li><p>Usename          : <?php echo $_SESSION['r_username']?></p></li>
 						<li><p>Gender           : <?php echo $_SESSION['p_gender']?></p></li>
