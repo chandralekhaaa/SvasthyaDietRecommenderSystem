@@ -9,6 +9,36 @@ $getdata=$database->getReference($ref)->getChild($user_key)->getValue();
 $selected_status = $getdata['selected_items'];
 $gender = $getdata['p_gender'];
 $num_meals = $getdata['p_nm'];
+if($gender=="female" && $num_meals==3)
+{
+    $breakfast=($day_cal)*0.2;
+    $lunch=($day_cal)*0.66;
+    $dinner=($day_cal)*0.26;
+    echo shell_exec(__DIR__."/recommend.py $breakfast $lunch $dinner");
+}
+elseif($gender=="male" && $num_meals==3)
+{
+    $breakfast=($day_cal)*0.21;
+    $lunch=($day_cal)*0.32;
+    $dinner=($day_cal)*0.32;
+    echo shell_exec(__DIR__."/recommend.py $breakfast $lunch $dinner");
+}
+elseif($gender=="female" && $num_meals==4)
+{
+    $breakfast=($day_cal)*0.15;
+    $lunch=($day_cal)*0.5;
+    $snacks=($day_cal)*0.15;
+    $dinner=($day_cal)*0.2;
+    echo shell_exec(__DIR__."/recommend.py $breakfast $lunch $snacks $dinner");
+}
+elseif($gender=="male" && $num_meals==4)
+{
+    $breakfast=($day_cal)*0.16;
+    $lunch=($day_cal)*0.24;
+    $snacks=($day_cal)*0.24;
+    $dinner=($day_cal)*0.36;
+    echo shell_exec(__DIR__."/recommend.py $breakfast $lunch $snacks $dinner");
+}
 
 // echo $selected_status;
 
