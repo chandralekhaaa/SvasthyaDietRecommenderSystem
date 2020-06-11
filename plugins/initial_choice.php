@@ -14,35 +14,40 @@ $num_meals = $getdata['p_nm'];
 // echo $selected_status;
 
 if ($selected_status=="0"){
-    if($gender=="female" && $num_meals==3)
+    if ($num_meals==3)
     {
-        $breakfast=($day_cal)*0.2;
-        $lunch=($day_cal)*0.66;
-        $dinner=($day_cal)*0.26;
+        if($gender=="female")
+        {
+            $breakfast=($day_cal)*0.2;
+            $lunch=($day_cal)*0.66;
+            $dinner=($day_cal)*0.26;
+        }
+        elseif($gender=="male")
+        {
+            $breakfast=($day_cal)*0.21;
+            $lunch=($day_cal)*0.32;
+            $dinner=($day_cal)*0.32;
+        }
         echo shell_exec(__DIR__."/recommend.py $breakfast $lunch $dinner");
     }
-elseif($gender=="male" && $num_meals==3)
+    elseif($num_meals==4)
     {
-        $breakfast=($day_cal)*0.21;
-        $lunch=($day_cal)*0.32;
-        $dinner=($day_cal)*0.32;
-        echo shell_exec(__DIR__."/recommend.py $breakfast $lunch $dinner");
-    }
-elseif($gender=="female" && $num_meals==4)
-    {
-        $breakfast=($day_cal)*0.15;
-        $lunch=($day_cal)*0.5;
-        $snacks=($day_cal)*0.15;
-        $dinner=($day_cal)*0.2;
-        echo shell_exec(__DIR__."/recommend.py $breakfast $lunch $dinner $snacks");
-    }
-elseif($gender=="male" && $num_meals==4)
-    {
-        $breakfast=($day_cal)*0.16;
-        $lunch=($day_cal)*0.24;
-        $snacks=($day_cal)*0.24;
-        $dinner=($day_cal)*0.36;
-        echo shell_exec(__DIR__."/recommend.py $breakfast $lunch $dinner $snacks");
+        if($gender=="female")
+        {
+            $breakfast=($day_cal)*0.15;
+            $lunch=($day_cal)*0.5;
+            $snacks=($day_cal)*0.15;
+            $dinner=($day_cal)*0.2;   
+        }
+        elseif($gender=="male")
+        {
+            $breakfast=($day_cal)*0.16;
+            $lunch=($day_cal)*0.24;
+            $snacks=($day_cal)*0.24;
+            $dinner=($day_cal)*0.36;
+        }
+        $output = shell_exec(__DIR__."/recommend.py $breakfast $lunch $dinner $snacks");
+        echo $output[0];
     }
 }
 elseif ($selected_status=="1"){
