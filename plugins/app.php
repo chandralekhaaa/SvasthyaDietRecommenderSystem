@@ -18,20 +18,27 @@ if(isset($_POST['signup']))
                 $_SESSION['r_emailid']=$email;
                 $_SESSION['r_password']=$pass;
                 $_SESSION['r_username']=$r_username;
+
+                $_SESSION['selected_items']=1;
 			    header("Location:profile.php");
 		    }
 	        else
 		    {
 	            header("Location:register.php");
+	            $_SESSION['selected_items']=0;
             }
         }
         else
         {
     	    header("Location:register.php");
+    	    $_SESSION['selected_items']=0;
         } 	    
     }
     else
-    	header("Location:register.php");
+    	{
+    		header("Location:register.php");
+    		$_SESSION['selected_items']=0;
+    	}
 }
 else
 {
