@@ -47,6 +47,7 @@ if ($selected_status=="0"){
             $dinner=($day_cal)*0.36;
         }
         $output = shell_exec(__DIR__."/recommend.py $breakfast $lunch $dinner $snacks");
+        $extras = ["[","]","'"];
         echo $output[0];
     }
 }
