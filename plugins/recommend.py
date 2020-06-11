@@ -24,12 +24,13 @@ def get_title_from_index(index):
 def get_index_from_title(title):
 	return df[df.title == title]["index"].values[0]
 
-total_calorie = sys.argv[1]
-user_key = sys.argv[2]
+# total_calorie = sys.argv[1]
+# user_key = sys.argv[2]
 # print(user_key)
 # print(total_calorie)
 
 df_breakfast = pd.read_csv("./plugins/indian_breakfast.csv")
+#print(df_breakfast.head(5))
 df_meals = pd.read_csv("./plugins/indian_meals.csv")
 df_snacks = pd.read_csv("./plugins/indian_snacks.csv")
 
