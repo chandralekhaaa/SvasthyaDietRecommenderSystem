@@ -10,9 +10,9 @@ def get_title_from_index(index):
 def get_index_from_title(title):
 	return df[df.title == title]["index"].values[0]
 
-df_breakfast = pd.read_csv("indian_breakfast.csv")
-df_meals = pd.read_csv("indian_meals.csv")
-df_snacks = pd.read_csv("indian_snacks.csv")
+df_breakfast = pd.read_csv("./plugins/indian_breakfast.csv")
+df_meals = pd.read_csv("./plugins/indian_meals.csv")
+df_snacks = pd.read_csv("./plugins/indian_snacks.csv")
 
 
 total_calorie = sys.argv[1]
