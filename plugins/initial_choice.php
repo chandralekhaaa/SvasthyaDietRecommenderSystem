@@ -28,7 +28,15 @@ if ($selected_status=="0"){
             $lunch=($day_cal)*0.32;
             $dinner=($day_cal)*0.32;
         }
-        echo shell_exec(__DIR__."/recommend.py $breakfast $lunch $dinner");
+        $output = shell_exec(__DIR__."/recommend.py $breakfast $lunch $dinner");
+        $extras = ["[","]","'"];
+        $edit1 = str_replace($extras,"",$output);
+        $food_items = explode(';',$edit1);
+        #echo $food_items[0];
+
+        $breakfast_items = explode(',',$food_items[0]);
+        $lunch_items = explode(',',$food_items[1]);
+        $dinner_items = explode(',',$food_items[2]);
     }
     elseif($num_meals==4)
     {
@@ -51,6 +59,12 @@ if ($selected_status=="0"){
         $edit1 = str_replace($extras,"",$output);
         $food_items = explode(';',$edit1);
         #echo $food_items[0];
+
+        $breakfast_items = explode(',',$food_items[0]);
+        $lunch_items = explode(',',$food_items[1]);
+        $dinner_items = explode(',',$food_items[2]);
+        $snacks_items = explode(',',$food_items[3]);
+
 
         
     }
