@@ -52,25 +52,73 @@ include("../plugins/initial_choice.php");
 		<div class="title">
 			Choose your favorite food item from each of these categories
 		</div>
-
+		<div class="title">
+			Breakfast
+		</div>
 		<div class="container">
 			<label class="option_item">
-				<input type="checkbox" name="" class="checkbox">
+				<input type="radio" name="bf" class="checkbox">
 				<div class="tickmark"></div>
-				<div class="icon"></div>
+				<div class="icon"><img src="https://img.icons8.com/cotton/64/000000/milk-bottle--v1.png"/></div>
 				<div class="name">breakfast_1</div>
 			</label>
 			<label class="option_item">
-				<input type="checkbox" name="" class="checkbox">
+				<input type="radio" name="bf" class="checkbox">
 				<div class="tickmark"></div>
-				<div class="icon"></div>
+				<div class="icon"><img src="https://img.icons8.com/cotton/64/000000/milk-bottle--v1.png"/></div>
 				<div class="name">breakfast_2</div>
 			</label>
 			<label class="option_item">
-				<input type="checkbox" name="" class="checkbox">
+				<input type="radio" name="bf" class="checkbox">
 				<div class="tickmark"></div>
-				<div class="icon"></div>
+				<div class="icon"><img src="https://img.icons8.com/cotton/64/000000/milk-bottle--v1.png"/></div>
 				<div class="name">breakfast_3</div>
+			</label>
+		</div>
+		<div class="title">
+			Lunch
+		</div>
+		<div class="container">
+			<label class="option_item">
+				<input type="radio" name="lun" class="checkbox">
+				<div class="tickmark"></div>
+				<div class="icon"><img src="https://img.icons8.com/dusk/64/000000/lunchbox.png"/></div>
+				<div class="name">lunch_1</div>
+			</label>
+			<label class="option_item">
+				<input type="radio" name="lun" class="checkbox">
+				<div class="tickmark"></div>
+				<div class="icon"><img src="https://img.icons8.com/dusk/64/000000/lunchbox.png"/></div>
+				<div class="name">lunch_2</div>
+			</label>
+			<label class="option_item">
+				<input type="radio" name="lun" class="checkbox">
+				<div class="tickmark"></div>
+				<div class="icon"><img src="https://img.icons8.com/dusk/64/000000/lunchbox.png"/></div>
+				<div class="name">lunch_3</div>
+			</label>
+		</div>
+		<div class="title">
+			Dinner
+		</div>
+		<div class="container">
+			<label class="option_item">
+				<input type="radio" name="din" class="checkbox">
+				<div class="tickmark"></div>
+				<div class="icon"><img src="https://img.icons8.com/color/48/000000/soup-plate.png"/></div>
+				<div class="name">dinner_1</div>
+			</label>
+			<label class="option_item">
+				<input type="radio" name="din" class="checkbox">
+				<div class="tickmark"></div>
+				<div class="icon"><img src="https://img.icons8.com/color/48/000000/soup-plate.png"/></div>
+				<div class="name">dinner_2</div>
+			</label>
+			<label class="option_item">
+				<input type="radio" name="din" class="checkbox">
+				<div class="tickmark"></div>
+				<div class="icon"><img src="https://img.icons8.com/color/48/000000/soup-plate.png"/></div>
+				<div class="name">dinner_3</div>
 			</label>
 		</div>
 	
