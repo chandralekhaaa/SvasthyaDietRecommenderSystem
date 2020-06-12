@@ -48,7 +48,11 @@ if ($selected_status=="0"){
         }
         $output = shell_exec(__DIR__."/recommend.py $breakfast $lunch $dinner $snacks");
         $extras = ["[","]","'"];
-        echo $output[0];
+        $edit1 = str_replace($extras,"",$output);
+        $food_items = explode(';',$edit1);
+        #echo $food_items[0];
+
+        
     }
 }
 elseif ($selected_status=="1"){
