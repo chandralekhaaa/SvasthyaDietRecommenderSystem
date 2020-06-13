@@ -73,5 +73,5 @@ elseif ($selected_status=="1"){
     
 }
 
-echo shell_exec(__DIR__."/recommend.py $day_cal $user_key");
+#echo shell_exec(__DIR__."/recommend.py $day_cal $user_key");
 ?>

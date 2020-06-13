@@ -150,7 +150,20 @@ include("../plugins/initial_choice.php");
 			elseif($selected_din_item=='din2'){ $pref_lun_item = $dinner_items[1]; }
 			elseif($selected_din_item=='din3'){ $pref_lun_item = $dinner_items[2]; }
 
-			shell_exec(__DIR__."/compute.py $pref_bf_item $pref_lun_item $pref_din_item");
+			// $ref= "profiledb/";
+			// $getdata=$database->getReference($ref)->getChild($user_key)->getValue();
+			// $selected_status = $getdata['selected_items'];
+			
+			// $postData = ['selected_items' => '1'];
+			// $newPostKey = $database->getReference('posts')->push()->getKey();
+			// $updates = ['posts/'.$newPostKey => $postData,
+			// 			'profiledb/'.$user_key.'/'.$newPostKey => $postData,];
+			// $database->getReference()->update($updates);
+
+			$database->getReference($ref)->getChild($user_key)->update(array('selected_itmes' => '1'));
+			
+
+			#shell_exec(__DIR__."/compute.py $pref_bf_item $pref_lun_item $pref_din_item ");
 
 		}
 	?>
