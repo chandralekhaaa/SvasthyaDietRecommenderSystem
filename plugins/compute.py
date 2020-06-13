@@ -125,14 +125,14 @@ except Exception as e:
     print("exc user_likes -> ",str(e))
 
 try:
-    print(meals_user_likes)
+    # print(meals_user_likes)
     bf_index = get_index_from_bf(bf_user_likes)
-    print(meals_user_likes)
+    # print(meals_user_likes)
     meals_index = get_index_from_meals(meals_user_likes)
     #snacks_index = get_index_from_snacks(snacks_user_likes)
-    print(meals_user_likes)
+    # print(meals_user_likes)
     dinner_index = get_index_from_dinner(dinner_user_likes)
-    print(meals_user_likes)
+    # print(meals_user_likes)
 except Exception as e:
     print("exc find_index -> ",str(e))
 
@@ -151,6 +151,27 @@ try:
     sorted_similar_dinner=sorted(similar_dinner,key=lambda x:x[1],reverse=True)
 except Exception as e:
     print("exc sort-> ",str(e))
+
+i=0
+for bf in sorted_similar_bf:
+    print(bf[0])
+    print(',')
+    i+=1
+    if i>20: break
+print(';')
+i=0
+for meal in sorted_similar_meals:
+    print(meal[0])
+    print(',')
+    i+=1
+    if i>20: break
+print(';')
+i=0
+for dinner in sorted_similar_dinner:
+    print(dinner[0])
+    print(',')
+    i+=1
+    if i>20: break
 
 # print(sorted_similar_meals[0])
 # print(sorted_similar_meals[1])

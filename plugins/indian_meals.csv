@@ -1,8 +1,8 @@
 s_no,name,protein,fat,carbs,fibre,total_cal,vn
-1,quinoa_pumpkin_kichidi meal,20,12,48,17,390,veg
+1,quinoa_pumpkin_kichidi_meal,20,12,48,17,390,veg
 2,high_protein_chole_patty_meal,29,31,80,26,704,veg
 3,hing_wale_channe_and_veg_pulao,28,13,99,24,638,veg
-4,dal_makhni_and_veg pulao,25,10,99,18,601,veg
+4,dal_makhni_and_veg_pulao,25,10,99,18,601,veg
 5,curd_rice,12,11,52,8,350,veg
 6,paratha_meal,36,34,84,22,842,veg
 7,pulav_and_egg_masala,25,26,38,14,494,non veg
@@ -13,7 +13,7 @@ s_no,name,protein,fat,carbs,fibre,total_cal,vn
 12,tomota_rice,19,9,26,7,340,veg
 13,Lemon_Rice,7.1,16,34,7,250,veg
 14,tamarid_rice,21,16,44,6.3,250,veg
-15,malabar_fish biriyani,103,16,34,28,550,non veg
+15,malabar_fish_biriyani,103,16,34,28,550,non veg
 16,mango_rice,19,8,39,14,250,veg
 17,sambar_rice,15,9,26,7,180,veg
 18,dal_rice,29,19,36,46,240,veg
