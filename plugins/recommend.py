@@ -37,8 +37,9 @@ try:
     #print(df_breakfast.head(5))
     df_meals = pd.read_csv("indian_meals.csv")
     df_snacks = pd.read_csv("indian_snacks.csv")
-    ref_meals_df = df_meals.filter(['s_no','name','carbs','protein','fat','total_cal','vn'])
-    df_dinner = ref_meals_df.append(df_breakfast, ignore_index=True)
+    df_dinner = pd.read_csv('indian_dinner.csv')
+    # ref_meals_df = df_meals.filter(['s_no','name','carbs','protein','fat','total_cal','vn'])
+    # df_dinner = ref_meals_df.append(df_breakfast, ignore_index=True)
     #print(df_dinner)
 except Exception as e:
     print("exc 1 -> ",str(e))
