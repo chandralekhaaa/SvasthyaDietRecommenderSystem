@@ -152,8 +152,8 @@ try:
 except Exception as e:
     print("exc sort-> ",str(e))
 
-print(sorted_similar_meals[0])
-print(sorted_similar_meals[1])
+# print(sorted_similar_meals[0])
+# print(sorted_similar_meals[1])
 
 # i=0
 # for bf in sorted_similar_bf:
