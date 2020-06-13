@@ -146,9 +146,9 @@ include("../plugins/initial_choice.php");
 			elseif($selected_lun_item=='lun2'){ $pref_lun_item = $lunch_items[1]; }
 			elseif($selected_lun_item=='lun3'){ $pref_lun_item = $lunch_items[2]; }
 
-			if($selected_din_item=='din1'){ $pref_lun_item = $dinner_items[0]; }
-			elseif($selected_din_item=='din2'){ $pref_lun_item = $dinner_items[1]; }
-			elseif($selected_din_item=='din3'){ $pref_lun_item = $dinner_items[2]; }
+			if($selected_din_item=='din1'){ $pref_din_item = $dinner_items[0]; }
+			elseif($selected_din_item=='din2'){ $pref_din_item = $dinner_items[1]; }
+			elseif($selected_din_item=='din3'){ $pref_din_item = $dinner_items[2]; }
 
 			// $ref= "profiledb/";
 			// $getdata=$database->getReference($ref)->getChild($user_key)->getValue();
