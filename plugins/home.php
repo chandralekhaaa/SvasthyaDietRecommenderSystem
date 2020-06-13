@@ -160,8 +160,11 @@ include("../plugins/initial_choice.php");
 			// 			'profiledb/'.$user_key.'/'.$newPostKey => $postData,];
 			// $database->getReference()->update($updates);
 
-			$database->getReference($ref)->getChild($user_key)->update(array('selected_itmes' => '1'));
-			
+			$database->getReference($ref)->getChild($user_key)->update(array('selected_items' => '1'));
+			$_SESSION['pref_bf_item'] = $pref_bf_item;
+			$_SESSION['pref_lun_item'] = $pref_lun_item;
+			$_SESSION['pref_din_item'] = $pref_din_item;
+			include("../plugins/initial_choice.php");
 
 			#shell_exec(__DIR__."/compute.py $pref_bf_item $pref_lun_item $pref_din_item ");
 
