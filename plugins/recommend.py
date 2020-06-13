@@ -15,11 +15,11 @@ from sklearn.feature_extraction.text import CountVectorizer
 from sklearn.metrics.pairwise import cosine_similarity
 
 
-def get_title_from_index(index):
-	return df[df.index == index]["title"].values[0]
+#def get_title_from_index(index):
+#	return df[df.index == index]["title"].values[0]
 
-def get_index_from_title(title):
-	return df[df.title == title]["index"].values[0]
+#def get_index_from_title(title):
+#	return df[df.title == title]["index"].values[0]
 
 # total_calorie = sys.argv[1]
 # user_key = sys.argv[2]
