@@ -83,7 +83,7 @@ elseif ($selected_status=="1"){
         #echo $food_items[0];  
         $_SESSION['bf_items']=$food_items[0];
         $_SESSION['lun_items']=$food_items[1];
-        $_SESSION['din_items']=$food_items[2]
+        $_SESSION['din_items']=$food_items[2];
         $selected_status="2";
 
     }
