@@ -19,23 +19,23 @@
 					<form action="profile_backend.php" method=POST>
 
 					Gender<br> 
-					<select name="p_gender" >
+					<select name="p_gender" required>
 						<option></option>
 						<option value="male">Male</option>
 						<option value="female">Female</option>
 					</select><br><br>
 
 					<label for="p_age">Age</label><br>
-					<input type=text id="p_age" name="p_age"/><br><br>
+					<input type=text id="p_age" name="p_age" required/><br><br>
 
 					<label for="p_height">Height (in cm)</label><br>
-					<input type="text" id="p_height" name="p_height"><br><br>
+					<input type="text" id="p_height" name="p_height" required><br><br>
 
 					<label for="p_weight">Weight (in kg)</label><br>
-					<input type="text" id="p_weight" name="p_weight"><br><br>
+					<input type="text" id="p_weight" name="p_weight" required><br><br>
 
 					Body fat level <br> 
-					<select name="p_bfl">
+					<select name="p_bfl" required>
 						<option></option>
 						<option> Low</option>
 						<option> Medium</option>
@@ -43,7 +43,7 @@
 					</select><br><br>
 
 					Sedentary level  <br>
-					<select name="p_sl">
+					<select name="p_sl" required>
 						<option></option>
 						<option value="sed"> Sedentary</option>
 						<option value="light"> Lightly Active</option>
@@ -53,7 +53,7 @@
 					</select><br><br>
 
 					Number of meals  <br>
-					<select name="p_nm">
+					<select name="p_nm" required>
 						<option></option>
 						<option> 3</option>
 						<option> 4</option>
@@ -61,7 +61,7 @@
 					</select><br><br>
 
 					Diet type  <br>
-					<select name="p_dt">
+					<select name="p_dt" required>
 						<option></option>
 						<option> Vegan</option>
 						<option> Vegetarian</option>

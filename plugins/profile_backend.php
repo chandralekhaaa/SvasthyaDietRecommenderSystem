@@ -71,8 +71,11 @@ if(isset($_POST['calculate_cal']))
              'p_nm'=>$nom,
              'p_dt'=>$diet,
              'cal_intake'=>$cal_intake,
-             'r_emailid'=>$email,
              'r_username'=>$r_username,
+             'bf_items'=>$_SESSION['bf_items'],
+             'lun_items'=>$_SESSION['lun_items'],
+             'din_items'=>$_SESSION['din_items'],
+             'snacks'=>$_SESSION['bf_items'],
              'selected_items'=>$selected_items
           ];
     

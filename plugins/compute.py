@@ -154,21 +154,21 @@ except Exception as e:
 
 i=0
 for bf in sorted_similar_bf:
-    print(bf[0])
+    print(get_title_from_index_bf(bf[0]))
     print(',')
     i+=1
     if i>20: break
 print(';')
 i=0
 for meal in sorted_similar_meals:
-    print(meal[0])
+    print(get_title_from_index_meals(meal[0]))
     print(',')
     i+=1
     if i>20: break
 print(';')
 i=0
 for dinner in sorted_similar_dinner:
-    print(dinner[0])
+    print(get_title_from_index_dinner(dinner[0]))
     print(',')
     i+=1
     if i>20: break
