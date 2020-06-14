@@ -19,21 +19,23 @@
 					<h1 class="display-4">Profile</h1>
 				</div>
 				<div class="row" id="form_content">
-					<form action="db_display.php" method=POST>
-                    <ul>
-						<li><p>Usename          : <?php echo $_SESSION['r_username']?></p></li>
-						<li><p>Gender           : <?php echo $_SESSION['p_gender']?></p></li>
-						<li><p>Age              : <?php echo $_SESSION['p_age']?></p></li>
-						<li><p>Height           : <?php echo $_SESSION['p_height']?></p></li>
-						<li><p>Weight           : <?php echo $_SESSION['p_weight']?></p></li>
-						<li><p>Body Fatlevel    : <?php echo $_SESSION['p_bfl']?></p></li>
-						<li><p>Sedentary level  : <?php echo $_SESSION['p_sl']?></p></li>
-						<li><p>Number of meals  : <?php echo $_SESSION['p_nm']?></p></li>
-						<li><p>Diet type        : <?php echo $_SESSION['p_dt']?></p></li>
-				    </ul>
-
-
-					</form>
+					
+					<?php
+					    include("../includes/dbconfig.php");
+						$ref= "profiledb/";
+						$postdata=$database->getReference($ref)->getChild($_SESSION['username_id'])->getValue();
+					?>
+					    <ul>
+						    <li><p>Username : <?php echo $postdata['r_username'];?></p></li>
+							<li><p>Gender : <?php echo $postdata['p_gender'];?></p></li>
+							<li><p>Age : <?php echo $postdata['p_age'];?></p></li>
+							<li><p>Height : <?php echo $postdata['p_height'];?></p></li>
+							<li><p>Weight : <?php echo $postdata['p_weight'];?></p></li>
+							<li><p>Body Fat level : <?php echo $postdata['p_bfl'];?></p></li>
+							<li><p>Sedentarylevel : <?php echo $postdata['p_sl'];?></p></li>
+							<li><p>No.of meals : <?php echo $postdata['p_nm'];?></p></li>
+							<li><p>Diet Type : <?php echo $postdata['p_dt'];?></p></li>
+						</ul>
 				
 				</div>
 			</div>

@@ -16,15 +16,6 @@ if(isset($_POST['calculate_cal']))
     $pass=$_SESSION["r_password"];
 
     $r_username=$_SESSION["r_username"];
-    
-    $_SESSION["p_gender"]=$gender;
-    $_SESSION["p_age"]=$age;
-    $_SESSION["p_height"]=$height;
-    $_SESSION["p_weight"]=$weight;
-    $_SESSION["p_bfl"]=$fat;
-    $_SESSION["p_sl"]=$sedlevel;
-    $_SESSION["p_nm"]=$nom;
-    $_SESSION["p_dt"]=$diet;
 
     $selected_items=$_SESSION['selected_items'];
     
@@ -80,6 +71,7 @@ if(isset($_POST['calculate_cal']))
              'p_nm'=>$nom,
              'p_dt'=>$diet,
              'cal_intake'=>$cal_intake,
+             'r_emailid'=>$email,
              'r_username'=>$r_username,
              'selected_items'=>$selected_items
           ];
