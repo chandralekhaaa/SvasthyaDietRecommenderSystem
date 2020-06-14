@@ -86,7 +86,7 @@ elseif ($selected_status=="1"){
         $output = shell_exec(__DIR__."/compute.py $breakfast $lunch $dinner $pref_breakfast_item $pref_lunch_item $pref_dinner_item");
         $_SESSION['derived_items'] = $output;
         //$database->getReference($ref)->getChild($user_key)->update(array('selected_items' => '2'));
-        header("Location: home_dash.php");
+        header("Location: home_dash1.php");
          //echo $output;
         // $arr = json_decode($output);
         // var_dump($arr);
@@ -112,7 +112,7 @@ elseif ($selected_status=="1"){
         $output = shell_exec(__DIR__."/compute.py $breakfast $lunch $dinner $pref_breakfast_item $pref_lunch_item $pref_dinner_item $snacks");
         $_SESSION['derived_items'] = $output;
         //$database->getReference($ref)->getChild($user_key)->update(array('selected_items' => '2'));
-        header("Location: home_dash.php");
+        header("Location: home_dash1.php");
         //echo $output;
         // $extras = ["[","]","'"];
         // $edit1 = str_replace($extras,"",$output);
