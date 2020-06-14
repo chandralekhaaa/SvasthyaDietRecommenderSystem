@@ -1,4 +1,5 @@
 <?php
+ob_start();
 // Start the session
 session_start();
 include("../plugins/initial_choice.php");
@@ -107,13 +108,13 @@ include("../plugins/initial_choice.php");
 					<input type="radio" name="din" value="din1" class="checkbox">
 					<div class="tickmark"></div>
 					<div class="icon"><img src="https://img.icons8.com/color/48/000000/soup-plate.png"/></div>
-					<div class="name"><?php echo $dinner_items[0] ?></div>
+					<div class="name"><?php echo $dinner_items[0]?></div>
 				</label>
 				<label class="option_item">
 					<input type="radio" name="din" value="din2" class="checkbox">
 					<div class="tickmark"></div>
 					<div class="icon"><img src="https://img.icons8.com/color/48/000000/soup-plate.png"/></div>
-					<div class="name"><?php echo $dinner_items[1] ?></div>
+					<div class="name"><?php echo $dinner_items[1]?></div>
 				</label>
 				<label class="option_item">
 					<input type="radio" name="din" value="din3" class="checkbox">
@@ -160,10 +161,11 @@ include("../plugins/initial_choice.php");
 			// 			'profiledb/'.$user_key.'/'.$newPostKey => $postData,];
 			// $database->getReference()->update($updates);
 
-			$database->getReference($ref)->getChild($user_key)->update(array('selected_items' => '1'));
-			$_SESSION['pref_bf_item'] = $pref_bf_item;
-			$_SESSION['pref_lun_item'] = $pref_lun_item;
-			$_SESSION['pref_din_item'] = $pref_din_item;
+			$database->getReference($ref)->getChild($user_key)->update(array('selected_items' => '1','pref_bf_item' => $pref_bf_item,'pref_lun_item' => $pref_lun_item,'pref_din_item' => $pref_din_item));
+
+			// $_SESSION['pref_bf_item'] = $pref_bf_item;
+			// $_SESSION['pref_lun_item'] = $pref_lun_item;
+			// $_SESSION['pref_din_item'] = $pref_din_item;
 			include("../plugins/initial_choice.php");
 
 			#shell_exec(__DIR__."/compute.py $pref_bf_item $pref_lun_item $pref_din_item ");

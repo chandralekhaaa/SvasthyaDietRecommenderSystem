@@ -1,6 +1,8 @@
 import sys
 import pandas as pd
 import numpy as np
+import random
+# import json 
 from sklearn.feature_extraction.text import CountVectorizer
 from sklearn.metrics.pairwise import cosine_similarity
 
@@ -28,15 +30,27 @@ try:
     bf_cal = sys.argv[1]
     lun_cal = sys.argv[2]
     din_cal = sys.argv[3]
-
-    pref_bf = sys.argv[4]
-    pref_lun = sys.argv[5]
-    pref_din = sys.argv[6]
-
     sn_cal = 0
     if(len(sys.argv)==8): sn_cal = sys.argv[7]
 except Exception as e:
-    print("exc sys -> ",str(e))
+    print("exc sys1 -> ",str(e))
+
+#print(len(sys.argv))
+try:
+    pref_bf = sys.argv[4]
+except Exception as e:
+    print("exc sys21 -> ",str(e))
+
+try:
+    pref_lun = sys.argv[5]
+except Exception as e:
+    print("exc sys22 -> ",pref_lun)
+try:
+    pref_din = sys.argv[6]
+except Exception as e:
+    print("exc sys23 -> ",pref_din)
+
+
 
 
 
@@ -62,7 +76,7 @@ except Exception as e:
 
 try:
     final_bf_df = df_breakfast[df_breakfast['total_cal']<=(float(bf_cal)+50.0)]
-    final_lun_df = df_meals[df_meals['total_cal']<=(float(lun_cal)+50.0)]
+    df_meals = df_meals[df_meals['total_cal']<=(float(lun_cal)+50.0)]
     final_din_df = df_dinner[df_dinner['total_cal']<=(float(din_cal)+50.0)]
     if (len(sys.argv)==8):
         #s_is_allowed = abs(df_snacks['total_cal']-sn_cal)<=50
@@ -152,26 +166,58 @@ try:
 except Exception as e:
     print("exc sort-> ",str(e))
 
-i=0
-for bf in sorted_similar_bf:
-    print(get_title_from_index_bf(bf[0]))
-    print(',')
-    i+=1
-    if i>20: break
-print(';')
-i=0
-for meal in sorted_similar_meals:
-    print(get_title_from_index_meals(meal[0]))
-    print(',')
-    i+=1
-    if i>20: break
-print(';')
-i=0
-for dinner in sorted_similar_dinner:
-    print(get_title_from_index_dinner(dinner[0]))
-    print(',')
-    i+=1
-    if i>20: break
+
+bf_final_items = list()
+lun_final_items = list()
+din_final_items = list()
+try:
+    for bf in sorted_similar_bf:
+        bf_final_items.append(str(get_title_from_index_bf(bf[0]))) 
+        #print(str(get_title_from_index_bf(bf[0])))
+except Exception as e:
+    print("")
+try:
+    for meal in sorted_similar_meals:
+        lun_final_items.append(get_title_from_index_meals(meal[0]))
+except Exception as e:
+    print("")
+try:
+    for dinner in sorted_similar_dinner:
+        din_final_items.append(get_title_from_index_dinner(dinner[0]))
+except Exception as e:
+    print("")
+
+selected_bf = random.choice(bf_final_items)
+selected_lun = random.choice(lun_final_items)
+selected_din = random.choice(din_final_items)
+
+print(selected_bf,",",selected_lun,",",selected_din)
+if(len(sys.argv)==8):
+    try:
+        sn_final_items = final_sn_df['name'].values.tolist()
+        selected_sn = random.choice(sn_final_items)
+        print(",",selected_sn)
+    except Exception as e:
+        print("snacks->",str(e))
+
+
+
+
+
+
+
+# print (json.dumps(bf_final_items))
+
+
+
+# string = ","
+# print(string.join(bf_final_items))
+# print (string.join(bf_final_items),';',','.join(lun_final_items),';',','.join(din_final_items))
+# print(';')
+# print(','.join(lun_final_items))
+# print(';')
+# print(','.join(din_final_items))
+    
 
 # print(sorted_similar_meals[0])
 # print(sorted_similar_meals[1])
