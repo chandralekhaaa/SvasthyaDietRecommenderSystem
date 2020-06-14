@@ -25,7 +25,7 @@ if(isset($_POST['calculate_cal']))
     // $uid=$user->getUid();
     
 	if($gender=="female"){
-        $bmr = (10 * $age) + (6.25 * $height) - (5 * $age) - 161;
+        $bmr = (10 * $weight) + (6.25 * $height) - (5 * $age) - 161;
         $cal_intake = 0;
         if($sedlevel=="sed"){
             $cal_intake = $bmr * 1.2;
@@ -43,7 +43,7 @@ if(isset($_POST['calculate_cal']))
         
 
     }else{
-        $bmr = (10 * $age) + (6.25 * $height) - (5 * $age) + 5;
+        $bmr = (10 * $weight) + (6.25 * $height) - (5 * $age) + 5;
         $cal_intake = 0;
         if($sedlevel=="sed"){
             $cal_intake = $bmr * 1.2;
