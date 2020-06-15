@@ -55,6 +55,8 @@ session_start();
 				<div class="row" id="form_content">
 					<form>
                         <p> 
+
+							<?php echo $_SESSION['derived_items']?>
                             <?php 
                                 $array=explode(',',$_SESSION['derived_items']);
                                 if(sizeof($array)==3)

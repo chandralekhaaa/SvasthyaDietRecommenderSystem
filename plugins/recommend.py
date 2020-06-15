@@ -29,8 +29,9 @@ from sklearn.metrics.pairwise import cosine_similarity
 bf_cal = sys.argv[1]
 lun_cal = sys.argv[2]
 din_cal = sys.argv[3]
+dt_type = sys.argv[4]
 sn_cal = 0
-if(len(sys.argv)==5): sn_cal = sys.argv[4]
+if(len(sys.argv)==6): sn_cal = sys.argv[5]
 
 try:
     df_breakfast = pd.read_csv("indian_breakfast.csv")
@@ -44,8 +45,13 @@ try:
 except Exception as e:
     print("exc 1 -> ",str(e))
 
+
+if (str(dt_type)=="Vegetarian"):
+    df_breakfast = df_breakfast[df_breakfast['vn']=='veg']
+
+
 try:
-    final_bf_df = df_breakfast[df_breakfast['total_cal']<=(float(bf_cal)+50.0)]
+    final_bf_df = df_breakfast[df_breakfast['total_cal']<=float(bf_cal)]
     #final_bf_df = df_breakfast[b_is_allowed]
     bf_head = final_bf_df.head(3)
     bf_head_names = bf_head['name']
@@ -53,13 +59,13 @@ except Exception as e:
     print("exc 2 -> ",str(e))
 
 #l_is_allowed = abs(df_meals['total_cal']-lun_cal)<=50
-final_lun_df = df_meals[df_meals['total_cal']<=(float(lun_cal)+50.0)]
+final_lun_df = df_meals[df_meals['total_cal']<=float(lun_cal)]
 lun_head = final_lun_df.head(3)
 lun_head_names = lun_head['name']
 
 try:
     #d_is_allowed = abs(df_dinner['total_cal']-din_cal)<=50
-    final_din_df = df_dinner[df_dinner['total_cal']<=(float(din_cal)+50.0)]
+    final_din_df = df_dinner[df_dinner['total_cal']<=float(din_cal)]
     din_head = final_din_df.head(3)
     din_head_names = din_head['name']
 except Exception as e:
@@ -72,7 +78,7 @@ dinner_test_set = din_head_names.to_string(index=False).split('\n')
 #din_vals = [','.join(ele.split()) for ele in dinner_test_set]
 
 
-if (len(sys.argv)==5):
+if (len(sys.argv)==6):
     #s_is_allowed = abs(df_snacks['total_cal']-sn_cal)<=50
     final_sn_df = df_snacks[df_snacks['total_cal']<=(float(sn_cal)+50.0)]
     sn_head = final_sn_df.head(3)

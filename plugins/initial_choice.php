@@ -9,6 +9,7 @@ $selected_status = $getdata['selected_items'];
 
 $gender = $getdata['p_gender'];
 $num_meals = $getdata['p_nm'];
+$diet_type = $getdata['p_dt'];
 
 
 // echo $selected_status;
@@ -30,7 +31,7 @@ if ($selected_status=="0"){
         }
         #$database->getReference($ref)->getChild($user_key)->update(array('breakfast_cal' => $breakfast));
         $database->getReference($ref)->getChild($user_key)->update(array('breakfast_cal' => $breakfast, 'lunch_cal' => $lunch, 'dinner_cal' => $dinner));
-        $output = shell_exec(__DIR__."/recommend.py $breakfast $lunch $dinner");
+        $output = shell_exec(__DIR__."/recommend.py $breakfast $lunch $dinner $diet_type");
         $extras = ["[","]","'"];
         $edit1 = str_replace($extras,"",$output);
         $food_items = explode(';',$edit1);
@@ -58,7 +59,7 @@ if ($selected_status=="0"){
         }
 
         $database->getReference($ref)->getChild($user_key)->update(array('breakfast_cal' => $breakfast, 'lunch_cal' => $lunch, 'snacks_cal' => $snacks, 'dinner_cal' => $dinner));
-        $output = shell_exec(__DIR__."/recommend.py $breakfast $lunch $dinner $snacks");
+        $output = shell_exec(__DIR__."/recommend.py $breakfast $lunch $dinner $diet_type $snacks");
         $extras = ["[","]","'"];
         $edit1 = str_replace($extras,"",$output);
         $food_items = explode(';',$edit1);
@@ -76,6 +77,7 @@ elseif ($selected_status=="1"){
     $breakfast = $getdata['breakfast_cal'];
     $lunch = $getdata['lunch_cal'];
     $dinner = $getdata['dinner_cal'];
+    $diet_type = $getdata['p_dt'];
 
     $pref_breakfast_item = (string)$getdata['pref_bf_item'];
     $pref_lunch_item = (string)$getdata['pref_lun_item'];
@@ -83,7 +85,7 @@ elseif ($selected_status=="1"){
     //echo "brakfast->", $pref_breakfast_item;
     if($num_meals==3)
     {
-        $output = shell_exec(__DIR__."/compute.py $breakfast $lunch $dinner $pref_breakfast_item $pref_lunch_item $pref_dinner_item");
+        $output = shell_exec(__DIR__."/compute.py $breakfast $lunch $dinner $pref_breakfast_item $pref_lunch_item $pref_dinner_item $diet_type");
         $_SESSION['derived_items'] = $output;
         //$database->getReference($ref)->getChild($user_key)->update(array('selected_items' => '2'));
         header("Location: home_dash1.php");
@@ -109,7 +111,7 @@ elseif ($selected_status=="1"){
     elseif($num_meals==4)
     {
         $snacks = $getdata['snacks_cal'];
-        $output = shell_exec(__DIR__."/compute.py $breakfast $lunch $dinner $pref_breakfast_item $pref_lunch_item $pref_dinner_item $snacks");
+        $output = shell_exec(__DIR__."/compute.py $breakfast $lunch $dinner $pref_breakfast_item $pref_lunch_item $pref_dinner_item $diet_type $snacks");
         $_SESSION['derived_items'] = $output;
         //$database->getReference($ref)->getChild($user_key)->update(array('selected_items' => '2'));
         header("Location: home_dash1.php");

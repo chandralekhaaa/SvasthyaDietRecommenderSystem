@@ -31,7 +31,7 @@ try:
     lun_cal = sys.argv[2]
     din_cal = sys.argv[3]
     sn_cal = 0
-    if(len(sys.argv)==8): sn_cal = sys.argv[7]
+    if(len(sys.argv)==9): sn_cal = sys.argv[8]
 except Exception as e:
     print("exc sys1 -> ",str(e))
 
@@ -51,7 +51,7 @@ except Exception as e:
     print("exc sys23 -> ",pref_din)
 
 
-
+dt_type = sys.argv[7]
 
 
 try:
@@ -74,13 +74,17 @@ try:
 except Exception as e:
     print("exc 1 -> ",str(e))
 
+
+if (str(dt_type)=="Vegetarian"):
+    df_breakfast = df_breakfast[df_breakfast['vn']=='veg']
+
 try:
-    final_bf_df = df_breakfast[df_breakfast['total_cal']<=(float(bf_cal)+50.0)]
-    df_meals = df_meals[df_meals['total_cal']<=(float(lun_cal)+50.0)]
-    final_din_df = df_dinner[df_dinner['total_cal']<=(float(din_cal)+50.0)]
-    if (len(sys.argv)==8):
+    final_bf_df = df_breakfast[df_breakfast['total_cal']<=float(bf_cal)]
+    df_meals = df_meals[df_meals['total_cal']<=float(lun_cal)]
+    final_din_df = df_dinner[df_dinner['total_cal']<=float(din_cal)]
+    if (len(sys.argv)==9):
         #s_is_allowed = abs(df_snacks['total_cal']-sn_cal)<=50
-        final_sn_df = df_snacks[df_snacks['total_cal']<=(float(sn_cal)+50.0)]
+        final_sn_df = df_snacks[df_snacks['total_cal']<=float(sn_cal)]
 except Exception as e:
     print("exc filter -> ",str(e))
 
@@ -171,19 +175,31 @@ bf_final_items = list()
 lun_final_items = list()
 din_final_items = list()
 try:
+    i=0
     for bf in sorted_similar_bf:
         bf_final_items.append(str(get_title_from_index_bf(bf[0]))) 
+        i+=1
+        if i>30:
+            break
         #print(str(get_title_from_index_bf(bf[0])))
 except Exception as e:
     print("")
 try:
+    i=0
     for meal in sorted_similar_meals:
         lun_final_items.append(get_title_from_index_meals(meal[0]))
+        i+=1
+        if i>30:
+            break
 except Exception as e:
     print("")
 try:
+    i=0
     for dinner in sorted_similar_dinner:
         din_final_items.append(get_title_from_index_dinner(dinner[0]))
+        i+=1
+        if i>30:
+            break
 except Exception as e:
     print("")
 
@@ -191,8 +207,24 @@ selected_bf = random.choice(bf_final_items)
 selected_lun = random.choice(lun_final_items)
 selected_din = random.choice(din_final_items)
 
+try:
+    index_selected_bf = get_index_from_bf(selected_bf)
+    index_selected_lun = get_index_from_meals(selected_lun)
+    index_selected_din = get_index_from_dinner(selected_din)
+except Exception as e:
+    print("excep index_selected-> ",str(e))
+
+try:
+    cosine_sim_factor_bf = cosine_sim1[bf_index][index_selected_bf]#cosine_similarity(bf_index,np.array([index_selected_bf]).reshape(1,-1))
+    cosine_sim_factor_lun = cosine_sim2[meals_index][index_selected_lun]#cosine_similarity(meals_index,np.array([index_selected_lun]).reshape(1,-1))
+    cosine_sim_factor_din = cosine_sim4[dinner_index][index_selected_din]#cosine_similarity(dinner_index,np.array([index_selected_din]).reshape(1,-1))
+except Exception as e:
+    print("excep cos_sim_selected-> ",str(e))
+
+
+print("cos_factor ->",cosine_sim_factor_bf,"|",cosine_sim_factor_lun,"|",cosine_sim_factor_din,"|")
 print(selected_bf,",",selected_lun,",",selected_din)
-if(len(sys.argv)==8):
+if(len(sys.argv)==9):
     try:
         sn_final_items = final_sn_df['name'].values.tolist()
         selected_sn = random.choice(sn_final_items)
