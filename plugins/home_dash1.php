@@ -43,53 +43,85 @@ session_start();
 			  </div>
 			</div>
 		</div>
-		<div class="row" >
-			
-		</div>		
-		<div class="row" id="main">
-			<div class="col"></div>
-			<div class="col rounded" id="form_wrapper">
-				<div class="row jumbotron jumbotron-fluid" id="form_header">
-				<h1 class="display-4">Dashboard</h1>
-				</div>
-				<div class="row" id="form_content">
-					<form>
-                        <p> 
+		
+	    <div class="row col-12" style="margin:0 auto; width:100%;">		
+			<?php 
+				$array=explode(',',$_SESSION['derived_items']);
+				if(sizeof($array)==6)
+				{
 
-							<?php echo $_SESSION['derived_items']?>
-                            <?php 
-                                $array=explode(',',$_SESSION['derived_items']);
-                                if(sizeof($array)==3)
-                                {
+			?>
+				<!-- <ul>
+					<li><p>Breakfast : <?php //echo $array[0];?></p></li>
+					<li><p>Lunch     :<?php //echo $array[1];?></p></li>
+					<li><p>Dinner    :<?php //echo $array[2];?></p></li>
+				</ul> -->
 
-                            ?>
-                                <ul>
-                                    <li><p>Breakfast : <?php echo $array[0];?></p></li>
-                                    <li><p>Lunch     :<?php echo $array[1];?></p></li>
-                                    <li><p>Dinner    :<?php echo $array[2];?></p></li>
-                                </ul>
-                               <?php
-                                }
-                                elseif(sizeof($array)==4)
-                                {
-                               ?>
-                               <ul>
-                                    <li><p>Breakfast :<?php echo $array[0];?></p></li>
-                                    <li><p>Lunch     :<?php echo $array[1];?></p></li>
-                                    <li><p>Dinner    :<?php echo $array[2];?></p></li>
-                                    <li><p>Snacks    :<?php echo $array[3];?></p></li>
-                                </ul>
-                                <?php
-                                }
-                                ?>
-                        </p>
-                        
-					</form>
-				
+			<div class="card" style="width: 18rem; margin: 5px;">
+				<img class="card-img-top" src="https://sukhis.com/wp-content/uploads/2019/09/Indian-Breakfast.jpg" alt="Card image cap">
+				<div class="card-body">
+					<p class="card-text"> <?php echo "Breakfast : ",$array[0];?></p>
 				</div>
 			</div>
-			<div class="col"></div>
+			<div class="card" style="width: 18rem;  margin: 5px;">
+				<img class="card-img-top" src="https://www.unlockfood.ca/EatRightOntario/media/Website-images-resized/Eating-well-with-Diabetes-South-Indian-and-Sri-Lankan-diets-resized.jpg" alt="Card image cap">
+				<div class="card-body">
+					<p class="card-text"> <?php echo "Lunch : ",$array[1];?></p>
+				</div>
+			</div>
+			<div class="card" style="width: 18rem;  margin: 5px;">
+				<img class="card-img-top" src="https://s3.amazonaws.com/secretsaucefiles/photos/images/000/114/746/large/home-panel-11-1.jpg?1485396250" alt="Card image cap">
+				<div class="card-body">
+					<p class="card-text"> <?php echo "Dinner : ",$array[2];?></p>
+				</div>
+			</div>
+
+			<?php
+			}
+			elseif(sizeof($array)==7)
+			{
+			?>
+			<!-- <ul>
+				<li><p>Breakfast :<?php //echo $array[0];?></p></li>
+				<li><p>Lunch     :<?php //echo $array[1];?></p></li>
+				<li><p>Dinner    :<?php //echo $array[2];?></p></li>
+				<li><p>Snacks    :<?php //echo $array[6];?></p></li> 
+
+			</ul> -->
+
+			<div class="card" style="width: 18rem;  margin: 5px;">
+				<img class="card-img-top" src="https://sukhis.com/wp-content/uploads/2019/09/Indian-Breakfast.jpg" alt="Card image cap">
+				<div class="card-body">
+					<p class="card-text"> <?php echo "Breakfast : ",$array[0];?></p>
+				</div>
+			</div>
+			<div class="card" style="width: 18rem;  margin: 5px;">
+				<img class="card-img-top" src="https://www.unlockfood.ca/EatRightOntario/media/Website-images-resized/Eating-well-with-Diabetes-South-Indian-and-Sri-Lankan-diets-resized.jpg" alt="Card image cap">
+				<div class="card-body">
+					<p class="card-text"> <?php echo "Lunch : ",$array[1];?></p>
+				</div>
+			</div>
+			<div class="card" style="width: 18rem;  margin: 5px;">
+				<img class="card-img-top" src="https://s3.amazonaws.com/secretsaucefiles/photos/images/000/114/746/large/home-panel-11-1.jpg?1485396250" alt="Card image cap">
+				<div class="card-body">
+					<p class="card-text"> <?php echo "Dinner : ",$array[2];?></p>
+				</div>
+			</div>
+			<div class="card" style="width: 18rem;  margin: 5px;">
+				<img class="card-img-top" src="https://genylifestyles.com/wp-content/uploads/2020/03/snacks-banner-blog.jpg" alt="Card image cap">
+				<div class="card-body">
+					<p class="card-text"> <?php echo "Snacks : ",$array[6];?></p>
+				</div>
+			</div>
+			
+			<?php
+			}
+			?>
 		</div>
+
+		<?php
+				echo "cosine_sim_factors :"."<br>".$array[3]."<br>".$array[4]."<br>".$array[5];
+			?>
 		<br><br>
 	</div>
 

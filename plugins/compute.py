@@ -222,8 +222,9 @@ except Exception as e:
     print("excep cos_sim_selected-> ",str(e))
 
 
-print("cos_factor ->",cosine_sim_factor_bf,"|",cosine_sim_factor_lun,"|",cosine_sim_factor_din,"|")
+
 print(selected_bf,",",selected_lun,",",selected_din)
+print(",",cosine_sim_factor_bf,",",cosine_sim_factor_lun,",",cosine_sim_factor_din)
 if(len(sys.argv)==9):
     try:
         sn_final_items = final_sn_df['name'].values.tolist()
@@ -231,6 +232,8 @@ if(len(sys.argv)==9):
         print(",",selected_sn)
     except Exception as e:
         print("snacks->",str(e))
+
+
 
 
 
